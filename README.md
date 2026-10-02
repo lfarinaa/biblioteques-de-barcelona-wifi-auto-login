@@ -34,7 +34,7 @@ release.
 
 ## Installing (unsigned / development)
 
-1. Clone this repo.
+1. Clone this repo (`git clone https://github.com/lfarinaa/biblioteques-wifi-autologin`).
 2. In Firefox, go to `about:debugging#/runtime/this-firefox`.
 3. Click "Load Temporary Add-on" and select `manifest.json`.
 4. Open the extension's preferences (`about:addons` → this extension →
