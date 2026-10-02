@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Biblioteques WiFi Auto-Login",
+  "name": "Biblioteques de Barcelona WiFi Auto-Login",
   "version": "1.0",
-  "homepage_url": "https://github.com/lfarinaa/biblioteques-wifi-autologin",
+  "homepage_url": "https://github.com/lfarinaa/biblioteques-de-barcelona-wifi-auto-login",
   "description": "Unofficial auto-login for the Barcelona metro area libraries (Biblioteques) WiFi captive portal. Not affiliated with Diputació de Barcelona.",
   "permissions": [
     "storage",

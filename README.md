@@ -1,4 +1,4 @@
-# Biblioteques WiFi Auto-Login (unofficial)
+# Biblioteques de Barcelona WiFi Auto-Login (unofficial)
 
 Firefox extension that auto-fills and submits the login form for the
 Barcelona metro-area public libraries (Xarxa de Biblioteques) WiFi
@@ -7,6 +7,14 @@ captive portal at `xsf-biblioteques.diba.cat`.
 **Not affiliated with, endorsed by, or supported by the Diputació de
 Barcelona.** Fields and selectors were reverse-engineered from the portal's
 HTML and may break if the library system updates its login page.
+
+## Disclaimer: vibe-coded
+
+This project is almost entirely vibe-coded: it was written with an AI
+coding assistant and has had limited human code review. It handles your
+library credentials (stored in plain text in the browser's extension
+storage), so read the source (it's four small files) before trusting it,
+and use it at your own risk. Bug reports and PRs are welcome.
 
 ## Status
 
@@ -34,7 +42,7 @@ release.
 
 ## Installing (unsigned / development)
 
-1. Clone this repo (`git clone https://github.com/lfarinaa/biblioteques-wifi-autologin`).
+1. Clone this repo (`git clone https://github.com/lfarinaa/biblioteques-de-barcelona-wifi-auto-login`).
 2. In Firefox, go to `about:debugging#/runtime/this-firefox`.
 3. Click "Load Temporary Add-on" and select `manifest.json`.
 4. Open the extension's preferences (`about:addons` → this extension →

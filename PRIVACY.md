@@ -1,6 +1,6 @@
 # Privacy policy
 
-Biblioteques WiFi Auto-Login (unofficial) does not collect, transmit, or share
+Biblioteques de Barcelona WiFi Auto-Login (unofficial) does not collect, transmit, or share
 any data with the developer or any third party.
 
 - Your carnet/DNI and PIN are stored locally in your browser via
