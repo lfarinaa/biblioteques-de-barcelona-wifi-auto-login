@@ -1,0 +1,51 @@
+name: Publish to AMO
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check tag matches manifest version
+        run: |
+          manifest_version=$(jq -r .version manifest.json)
+          if [ "v$manifest_version" != "$GITHUB_REF_NAME" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match manifest version $manifest_version"
+            exit 1
+          fi
+
+      - name: Stage extension files
+        run: |
+          mkdir build
+          cp manifest.json content.js options.html options.js build/
+          (cd build && zip -X ../extension.zip *)
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Submit to AMO (listed channel)
+        env:
+          AMO_JWT_ISSUER: ${{ secrets.AMO_JWT_ISSUER }}
+          AMO_JWT_SECRET: ${{ secrets.AMO_JWT_SECRET }}
+        run: |
+          npx --yes web-ext sign \
+            --source-dir build \
+            --channel listed \
+            --approval-timeout 0 \
+            --api-key "$AMO_JWT_ISSUER" \
+            --api-secret "$AMO_JWT_SECRET"
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mv extension.zip "biblioteques-de-barcelona-wifi-auto-login-${GITHUB_REF_NAME#v}.zip"
+          gh release create "$GITHUB_REF_NAME" --generate-notes ./biblioteques-de-barcelona-wifi-auto-login-*.zip
