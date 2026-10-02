@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Biblioteques WiFi — settings</title>
+  <style>
+    body { font-family: sans-serif; padding: 1.5em; max-width: 320px; }
+    label { display: block; margin-bottom: 0.75em; }
+    input { width: 100%; padding: 0.4em; box-sizing: border-box; }
+    button { padding: 0.5em 1em; }
+    #status { color: green; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <h3>Biblioteques WiFi credentials</h3>
+  <label>Carnet / DNI
+    <input type="text" id="username" autocomplete="off">
+  </label>
+  <label>PIN
+    <input type="password" id="pin" autocomplete="off">
+  </label>
+  <button id="save">Save</button>
+  <p id="status"></p>
+  <script src="options.js"></script>
+</body>
+</html>

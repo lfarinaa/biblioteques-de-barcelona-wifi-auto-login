@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Biblioteques WiFi Auto-Login",
+  "version": "1.0",
+  "description": "Unofficial auto-login for the Barcelona metro area libraries (Biblioteques) WiFi captive portal. Not affiliated with Diputació de Barcelona.",
+  "permissions": [
+    "storage",
+    "https://xsf-biblioteques.diba.cat/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://xsf-biblioteques.diba.cat/guest/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "biblioteques-autologin@luis.example",
+      "strict_min_version": "155.0"
+    }
+  }
+}
