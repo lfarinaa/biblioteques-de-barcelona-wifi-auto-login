@@ -57,4 +57,4 @@ install, see the AMO release (once published) or self-sign via
 
 ## License
 
-MIT (or pick one before publishing — not included yet).
+MIT — see [LICENSE](LICENSE). Privacy: see [PRIVACY.md](PRIVACY.md).
